@@ -18,13 +18,14 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
-        <Home />
-        <Route path='/' component={Home}></Route>
-        <Route path='/feeling' component={Feeling}></Route>
-        <Route path='/understanding' component={Understanding}></Route>
-        <Route path='/support' component={Support}></Route>
-        <Route path='/comments' component={Comments}></Route>
-        <Route path='/submitReview' component={SubmitReview}></Route>
+        <Router>
+          <Route path="/" component={Home} />
+          <Route path="/feeling" component={Feeling} />
+          <Route path="/understanding" component={Understanding} />
+          <Route path="/support" component={Support} />
+          <Route path="/comments" component={Comments} />
+          <Route path="/submitReview" component={SubmitReview} />
+        </Router>
       </div>
     );
   }

@@ -10,11 +10,11 @@ APP
 
 INDEX
 - [] Create a reducer for each component
-    - [] Including SubmitReview to hold the entire local state to send with the POST to the database
 - [] Create a local state to hold each object from each reducer
 
 HOME
 - [] Just a screen with a 'Begin Feedback' button
+- [] Button routes to Feeling
 
 FEELING
 - [] 1-10 scale required entry
