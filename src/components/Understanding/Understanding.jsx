@@ -53,7 +53,7 @@ class Understanding extends Component {
             <h1>How well are you understanding the content?</h1>
             <p className='plsEnterNum'>(Please enter a number between 1 and 10)</p>
             <form onSubmit={this.goToSupport}>
-                <label>Understanding? </label>
+                <label>How well are you understanding? </label>
                 <input required
                     placeholder="*"
                     value={this.state.newUnderstanding.understanding}

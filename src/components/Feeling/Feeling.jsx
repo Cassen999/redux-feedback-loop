@@ -55,7 +55,7 @@ class Feeling extends Component {
                 <h1>How are you feeling today?</h1>
                 <p className='plsEnterNum'>(Please enter a number between 1 and 10)</p>
                 <form onSubmit={this.goToUnderstanding}>
-                    <label>Feeling? </label>
+                    <label>How do you feel? </label>
                     <input required
                         placeholder="*"
                         value={this.state.newFeeling.feeling}
