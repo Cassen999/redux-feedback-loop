@@ -9,12 +9,11 @@ APP
 - [x] Set up Routes
 
 INDEX
-- [] Create a reducer for each component
-- [] Create a local state to hold each object from each reducer
+- [x] Create a reducer for each component
 
 HOME
-- [] Just a screen with a 'Begin Feedback' button
-- [] Button routes to Feeling
+- [x] Just a screen with a 'Begin Feedback' button
+- [x] Button routes to Feeling
 
 FEELING
 - [] 1-10 scale required entry
@@ -38,6 +37,6 @@ COMMENTS
     - [] Also must dispatch Comments data to reducer
 
 SUBMISSION REVIEW
-- [] Map reducer and display data for user to review
+- [] Create local state to use reduxState as values to send to database
 - [] Submit button will make a POST request to the server to add all data to the database
     - [] Also must route back to home screen

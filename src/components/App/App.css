@@ -17,3 +17,7 @@
   font-size: large;
 }
 
+.fieldRequired {
+  font-size: 10px;
+  color: red;
+}
