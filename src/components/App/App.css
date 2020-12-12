@@ -17,6 +17,12 @@
   font-size: large;
 }
 
+.plsEnterNum {
+  font-size: 12px;
+  opacity: 80%;
+  color: gray;
+}
+
 .fieldRequired {
   font-size: 10px;
   color: red;

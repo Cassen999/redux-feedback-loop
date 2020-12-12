@@ -10,6 +10,7 @@ class Feeling extends Component {
         }
     }
 
+    // Using componentDidMount for the conditional render
     componentDidMount() {
         this.setState({
             showRequired: true
@@ -52,6 +53,7 @@ class Feeling extends Component {
         return(
             <div>
                 <h1>How are you feeling today?</h1>
+                <p className='plsEnterNum'>(Please enter a number between 1 and 10)</p>
                 <form onSubmit={this.goToUnderstanding}>
                     <label>Feeling? </label>
                     <input required
