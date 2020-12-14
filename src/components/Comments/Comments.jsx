@@ -50,7 +50,9 @@ class Comments extends Component {
                 <h1>Do you have any comments for us?</h1>
                 <form>
                     <TextField className="commentBox"
-                        placeholder="Write comments here"
+                        label="Write comments here"
+                        multiline
+                        rowsMax="4"
                         value={this.state.newComment.comment}
                         onChange={(event) => this.handleChange('comment', event)}
                         type="text"
@@ -61,7 +63,8 @@ class Comments extends Component {
                     onClick={this.goToSubmitReview} 
                     variant="contained" 
                     color="primary">
-                    Next</Button>
+                    Next
+                    </Button>
             </div>
         )
     }

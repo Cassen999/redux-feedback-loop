@@ -73,7 +73,7 @@ class Support extends Component {
                 <p className='plsEnterNum'>(Please enter a number between 1 and 10)</p>
                 <form onSubmit={this.goToComments}>
                     <TextField required
-                        placeholder="*How supported do you feel? "
+                        placeholder="*Supported?"
                         value={this.state.newSupport.support}
                         onChange={(event) => this.handleChange('support', event)}
                         type="number"

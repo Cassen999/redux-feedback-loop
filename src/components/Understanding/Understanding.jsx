@@ -71,7 +71,7 @@ class Understanding extends Component {
             <p className='plsEnterNum'>(Please enter a number between 1 and 10)</p>
             <form onSubmit={this.goToSupport}>
                 <TextField required
-                    placeholder="*How well are you understanding?"
+                    placeholder="*Understanding?"
                     value={this.state.newUnderstanding.understanding}
                     onChange={(event) => this.handleChange('understanding', event)}
                     type="number"
@@ -80,8 +80,9 @@ class Understanding extends Component {
                 {/* Button will send dispatch and route to Understanding */}
                 <Button type="submit"
                     variant="contained"
-                    color="primary"
-                    >Next</Button>
+                    color="primary">
+                    Next
+                    </Button>
                 <p className="fieldRequired">{this.state.showRequired ? '*This field is required' : ''}</p>
             </form>
         </div>
