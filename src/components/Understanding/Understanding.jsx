@@ -1,6 +1,23 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+
+const styles = theme => ({
+    button: {
+      margin: theme.spacing.unit,
+    },
+    rightIcon: {
+      marginLeft: theme.spacing.unit,
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+      width: 200,
+    },
+  });
 
 class Understanding extends Component {
     // state
@@ -53,16 +70,18 @@ class Understanding extends Component {
             <h1>How well are you understanding the content?</h1>
             <p className='plsEnterNum'>(Please enter a number between 1 and 10)</p>
             <form onSubmit={this.goToSupport}>
-                <label>How well are you understanding? </label>
-                <input required
-                    placeholder="*"
+                <TextField required
+                    placeholder="*How well are you understanding?"
                     value={this.state.newUnderstanding.understanding}
                     onChange={(event) => this.handleChange('understanding', event)}
                     type="number"
                     min="1"
-                    max="10"></input>
+                    max="10"></TextField>
                 {/* Button will send dispatch and route to Understanding */}
-                <button type="submit">Next</button>
+                <Button type="submit"
+                    variant="contained"
+                    color="primary"
+                    >Next</Button>
                 <p className="fieldRequired">{this.state.showRequired ? '*This field is required' : ''}</p>
             </form>
         </div>
@@ -70,4 +89,4 @@ class Understanding extends Component {
     }
 }
 
-export default connect()(withRouter(Understanding));
+export default connect(withStyles(styles))(Understanding);

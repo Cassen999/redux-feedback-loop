@@ -1,5 +1,22 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+    button: {
+      margin: theme.spacing.unit,
+    },
+    rightIcon: {
+      marginLeft: theme.spacing.unit,
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+      width: 200,
+    },
+  });
 
 class Comments extends Component {
 
@@ -31,19 +48,23 @@ class Comments extends Component {
         return(
             <div>
                 <h1>Do you have any comments for us?</h1>
-                <form onSubmit={this.goToSubmitReview}>
-                    <textarea className="commentBox"
+                <form>
+                    <TextField className="commentBox"
                         placeholder="Write comments here"
                         value={this.state.newComment.comment}
                         onChange={(event) => this.handleChange('comment', event)}
                         type="text"
-                        maxLength="300"></textarea>
+                        maxLength="300"></TextField>
                     {/* Button will send dispatch and route to SubmitReview */}
-                    <button className="commNext" type="submit">Next</button>
                 </form>
+                <Button className="commNext" 
+                    onClick={this.goToSubmitReview} 
+                    variant="contained" 
+                    color="primary">
+                    Next</Button>
             </div>
         )
     }
 }
 
-export default connect()(Comments);
+export default connect(withStyles(styles))(Comments);

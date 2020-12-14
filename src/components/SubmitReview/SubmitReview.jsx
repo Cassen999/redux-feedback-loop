@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 class SubmitReview extends Component {
     // Create local state
@@ -48,7 +49,12 @@ class SubmitReview extends Component {
                 <p className="reviewQuestion">Do you have any comments for us?</p>
                 <p className="reviewScore">{this.props.reduxState.commentsReducer.comment}</p>
                 <h3>If everything looks good click the button below to submit your feedback</h3>
-                <button type="button" onClick={this.submitAndGoHome}>Submit Feedback</button>
+                <Button type="button" 
+                    onClick={this.submitAndGoHome}
+                    variant="contained" 
+                    color="primary">
+                    Submit Feedback
+                    </Button>
             </div>
         )
     }

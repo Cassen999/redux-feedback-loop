@@ -1,5 +1,22 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+    button: {
+      margin: theme.spacing.unit,
+    },
+    rightIcon: {
+      marginLeft: theme.spacing.unit,
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+      width: 200,
+    },
+  });
 
 class Feeling extends Component {
     // state
@@ -55,16 +72,20 @@ class Feeling extends Component {
                 <h1>How are you feeling today?</h1>
                 <p className='plsEnterNum'>(Please enter a number between 1 and 10)</p>
                 <form onSubmit={this.goToUnderstanding}>
-                    <label>How do you feel? </label>
-                    <input required
-                        placeholder="*"
+                    {/* <label>How do you feel? </label> */}
+                    <TextField required
+                        placeholder="*How do you feel?"
                         value={this.state.newFeeling.feeling}
                         onChange={(event) => this.handleChange('feeling', event)}
                         type="number"
                         min="1"
-                        max="10"></input>
+                        max="10"></TextField>
                     {/* Button will send dispatch and route to Understanding */}
-                    <button type="submit">Next</button>
+                    <Button type="submit" 
+                        variant="contained" 
+                        color="primary">
+                        Next
+                    </Button>
                     <p className="fieldRequired">{this.state.showRequired ? '*This field is required' : ''}</p>
                 </form>
             </div>
@@ -72,4 +93,4 @@ class Feeling extends Component {
     }
 }
 
-export default connect()(Feeling);
+export default connect(withStyles(styles))(Feeling);

@@ -1,5 +1,22 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+    button: {
+      margin: theme.spacing.unit,
+    },
+    rightIcon: {
+      marginLeft: theme.spacing.unit,
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+      width: 200,
+    },
+  });
 
 class Support extends Component {
     // state
@@ -55,16 +72,18 @@ class Support extends Component {
                 <h1>How well do you feel you are being supported?</h1>
                 <p className='plsEnterNum'>(Please enter a number between 1 and 10)</p>
                 <form onSubmit={this.goToComments}>
-                    <label>How supported do you feel? </label>
-                    <input required
-                        placeholder="*"
+                    <TextField required
+                        placeholder="*How supported do you feel? "
                         value={this.state.newSupport.support}
                         onChange={(event) => this.handleChange('support', event)}
                         type="number"
                         min="1"
-                        max="10"></input>
+                        max="10"></TextField>
                     {/* Button will send dispatch and route to Understanding */}
-                    <button type="submit">Next</button>
+                    <Button type="submit"
+                        variant="contained" 
+                        color="primary">
+                        Next</Button>
                     <p className="fieldRequired">{this.state.showRequired ? '*This field is required' : ''}</p>
                 </form>
             </div>
@@ -72,4 +91,5 @@ class Support extends Component {
     }
 }
 
-export default connect()(Support);
+export default connect(withStyles(styles))(Support);
+
